@@ -3,6 +3,7 @@
 #include <vector>
 #include "OrderBookEntry.h"
 #include "OrderBook.h"
+#include "Wallet.h"
 
 class MerkelApp{
 
@@ -26,6 +27,8 @@ class MerkelApp{
         std::string currentTime;
 
         OrderBook orderBook{"crypto_order_book.csv"};
+
+        Wallet wallet;
 
         // std::vector<OrderBookEntry> orders;
 

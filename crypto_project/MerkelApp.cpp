@@ -3,6 +3,7 @@
 #include "MerkelApp.h"
 #include "CSVReader.h"
 
+
 MerkelApp::MerkelApp()
 {
 
@@ -13,6 +14,8 @@ void MerkelApp::init()
 
     int userInput;
     currentTime = orderBook.getEarliestTime();
+
+    wallet.insertCurrency("BTC", 10);
 
     while(true)
     {
@@ -72,6 +75,11 @@ void MerkelApp::processUserOption(int userOption)
 
     case 3: 
         enterAsk();
+        break;
+
+    case 5:
+        printWallet();
+        break;
 
     case 6:
         gotoNextTimeFrame();
@@ -158,6 +166,8 @@ void MerkelApp::enterBid(){
 }
 
 void MerkelApp::printWallet(){
+
+    std::cout << wallet.toString() << std::endl;
 
 }
 
